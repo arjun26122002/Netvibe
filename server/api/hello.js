@@ -1,4 +1,8 @@
 module.exports = (req, res) => {
-    res.status(200).json({ message: 'Hello, World!' });
-  };
+    let msg = "hello there, how are you!!";
   
+    // msg = "Boo!";
+    res.json({
+      msg,
+    });
+  };

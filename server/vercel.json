@@ -1,8 +1,16 @@
 {
-    "rewrites": [
+    "version": 2,
+    "name": "Netvibe Server",
+    "builds": [
         {
-            "source": "/users/:user_id",
-            "destination": "/api/users/:user_id"
+            "src": "./index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
 }

@@ -14,7 +14,7 @@ const app = express();
 
 //to serve images for public
 app.use(express.static('public'))
-app.use('/images',express.static('images'))
+app.use('/images', express.static('images'))
 
 //MiddleWare
 app.use(bodyparser.json({ limit: '30mb', extended: true }))
@@ -31,7 +31,10 @@ mongoose
     .catch((error) => console.log(error));
 
 
-
+const api = require("../api/hello");
+console.log("Debug started");
+api({}, { json: (response) => console.log("RESPONSE", response) });
+console.log("Debug ended");
 
 app.use('/auth', AuthRoute)
 app.use('/user', UserRoute)
